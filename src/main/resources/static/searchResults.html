@@ -1,0 +1,19 @@
+<div class="row" style="margin-top: 60px;">
+	<div class="col-md-4 col-md-offset-4">
+		<form role="form" ng-submit="flightSearch()">
+			<fieldset>
+				<h3 style="text-align: center;">Search the sky!</h3>
+				<div class="form-group">
+					<input type="text" class="form-control" id="originAirport" placeholder="Where are you leaving?" ng-model="origin.airport" />
+					<input type="text" class="form-control" id="originDate" placeholder="When are you going?" ng-model="origin.date" />
+				</div>
+				<div class="form-group">
+					<input type="text" class="form-control" id="destinationAirport" placeholder="Where are you headed?" ng-model="destination.airport" />
+					<input type="text" class="form-control" id="destinationDate" placeholder="When are you coming back?" ng-model="destination.date" />
+				</div>
+				<input class="btn btn-lg btn-success btn-block" type="submit" value="Aviato!" />
+			</fieldset>
+		</form>
+	</div>
+</div>
+	

@@ -1,0 +1,84 @@
+<div class="row" style="margin-top: 40px;">
+	<div class="col-md-8 col-md-offset-2 column">
+		<form role="form" ng-submit="flightSearch()">
+			<fieldset>
+				<legend>Find a flight - {{greeting.content}}</legend>
+				<div class="row">
+					<div class="col-sm-3">
+						<div class="form-group">
+							<input type="text" class="form-control" id="origin" placeholder="From: Airport" ng-model="origin" />
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="form-group">
+							<input type="text" class="form-control" id="destination" placeholder="To: Airport" ng-model="destination" />
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="form-group">
+							<input type="date" class="form-control" id="departDate" placeholder="yyyy-MM-dd" ng-model="departDate" />
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="form-group">
+							<input type="date" class="form-control" id="returnDate" placeholder="yyyy-MM-dd" ng-model="returnDate" />
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="form-group">
+							<input class="btn btn-md btn-success btn-block" type="submit" value="Aviato!" />
+						</div>
+					</div>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+	<div ng-show="results" class="col-md-8 col-md-offset-2 column">
+		<h3>Departures</h3>
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>Airline</th>
+					<th>Departing</th>
+					<th>Arriving</th>
+					<th>&nbsp;</th>
+					<th>&nbsp;</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="flightDetail in results.departures">
+					<td>{{flightDetail.airline}}</td>
+					<td>{{flightDetail.origin}} at {{flightDetail.departureTime}}</td>
+					<td>{{flightDetail.destination}} at {{flightDetail.arrivalTime}}</td>
+					<td>${{flightDetail.price}}</td>
+					<td><input name="departureSelected" type="radio" /></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div ng-show="results" class="col-md-8 col-md-offset-2 column">
+		<h3>Returns</h3>
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>Airline</th>
+					<th>Departing</th>
+					<th>Arriving</th>
+					<th>&nbsp;</th>
+					<th>&nbsp;</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="flightDetail in results.returns">
+					<td>{{flightDetail.airline}}</td>
+					<td>{{flightDetail.origin}} at {{flightDetail.departureTime}}</td>
+					<td>{{flightDetail.destination}} at {{flightDetail.arrivalTime}}</td>
+					<td>${{flightDetail.price}}</td>
+					<td><input name="returnSelected" type="radio" /></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+	

@@ -1,0 +1,17 @@
+.aviato-header {
+	background-color: #194b90;
+}
+
+ul.aviato-nav {
+	padding-top: 1em;
+	list-style-type: none;
+}
+
+ul.aviato-nav a, ul.aviato-nav a:visited {
+	color: #FFF;
+	text-decoration: none;
+}
+
+ul.aviato-nav a:hover, ul.aviato-nav a:active {
+	color: #FFF;
+}

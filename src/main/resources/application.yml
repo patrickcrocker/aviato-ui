@@ -1,0 +1,9 @@
+security:
+  user:
+    name: bachman@aviato.com
+    password: password
+zuul:
+  routes:
+    resource:
+      path: /api/flightSearch/**
+      url: http://localhost:9000/flightSearch
