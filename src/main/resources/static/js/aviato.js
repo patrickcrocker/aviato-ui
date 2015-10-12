@@ -14,19 +14,15 @@ angular.module('aviato', [ 'ngRoute', 'ngCookies' ])
 	})
 	.controller('home', function($scope, $http, $cookies) {
 
-		$http.get('/api/flightSearch').success(function(data) {
-			$scope.greeting = data;
-		});
-
 		var originCookie = $cookies.get('originCookie');
 		if (originCookie) $scope.origin = originCookie;
-		
+
 		var destinationCookie = $cookies.get('destinationCookie');
 		if (destinationCookie) $scope.destination = destinationCookie;
-		
+
 		var today = new Date();
 		$scope.departDate = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 1);
-		$scope.returnDate = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 3);;
+		$scope.returnDate = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 3);
 
 		$scope.flightSearch = function() {
 
@@ -87,7 +83,8 @@ angular.module('aviato', [ 'ngRoute', 'ngCookies' ])
 					$location.path('/');
 					$scope.error = false;
 					$rootScope.authenticated = true;
-//					$window.location.assign('/');
+					// Issue head request to obtain the updated CSRF token for later POSTs
+					$http.head('/');
 				} else {
 					console.log('Login failed')
 					$location.path('/login');
