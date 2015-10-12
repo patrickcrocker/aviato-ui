@@ -22,8 +22,7 @@
 		<!-- Webjar/Wro properties -->
 		<!-- wro4j barfs on v3.3.5 -->
 		<bootstrap.version>3.3.4</bootstrap.version>
-		<jquery.version>2.1.4</jquery.version>
-		<angularjs.version>1.4.1</angularjs.version>
+		<angularjs.version>1.4.7</angularjs.version>
 	</properties>
 
 	<build>
@@ -97,11 +96,6 @@
 					<jsDestinationFolder>${project.build.directory}/generated-resources/static/js</jsDestinationFolder>
 				</configuration>
 				<dependencies>
-					<dependency>
-						<groupId>org.webjars</groupId>
-						<artifactId>jquery</artifactId>
-						<version>${jquery.version}</version>
-					</dependency>
 					<dependency>
 						<groupId>org.webjars</groupId>
 						<artifactId>angularjs</artifactId>
