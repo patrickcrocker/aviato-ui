@@ -23,9 +23,11 @@
 		<!-- wro4j barfs on v3.3.5 -->
 		<bootstrap.version>3.3.4</bootstrap.version>
 		<angularjs.version>1.4.7</angularjs.version>
+		<versionNumber>${project.version}</versionNumber>
 	</properties>
 
 	<build>
+		<finalName>${project.artifactId}-${versionNumber}</finalName>
 		<resources>
 			<resource>
 				<directory>${project.basedir}/src/main/resources</directory>
